@@ -11,7 +11,7 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-white">Let's discuss your next project</p>
+          <p className="text-white">Let&apos;s discuss your next project</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
