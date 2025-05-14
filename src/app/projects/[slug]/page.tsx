@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 const projects = [
   {
@@ -23,13 +24,12 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-type Props = {
+type PageProps = {
   params: { slug: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default function ProjectPage(props: Props) {
-  const project = projects.find((p) => p.slug === props.params.slug);
+export default async function ProjectPage({ params }: PageProps) {
+  const project = projects.find((p) => p.slug === params.slug);
   if (!project) return <div className="text-white p-8">Project not found.</div>;
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white p-8">
