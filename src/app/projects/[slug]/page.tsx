@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 const projects = [
   {
     slug: 'roblox-valuator-bot',
@@ -23,7 +29,7 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return <div className="text-white p-8">Project not found.</div>;
   return (
