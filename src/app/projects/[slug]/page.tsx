@@ -39,9 +39,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         </div>
         <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View on GitHub</a>
         <div className="mt-6">
-          <Link href="/">
-            <span className="text-gray-400 hover:underline cursor-pointer">← Back to Home</span>
-          </Link>
+          <a href="/" className="text-gray-400 hover:underline cursor-pointer">← Back to Home</a>
         </div>
       </div>
     </div>
