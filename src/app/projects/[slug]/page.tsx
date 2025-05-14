@@ -23,12 +23,13 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({
-  params,
-}: {
+type Props = {
   params: { slug: string }
-}) {
-  const project = projects.find((p) => p.slug === params.slug);
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export default function ProjectPage(props: Props) {
+  const project = projects.find((p) => p.slug === props.params.slug);
   if (!project) return <div className="text-white p-8">Project not found.</div>;
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white p-8">
