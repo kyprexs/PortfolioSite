@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Background from '@/components/Background';
 import Layout from '@/components/Layout';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
@@ -9,7 +8,6 @@ import Contact from '@/components/Contact';
 export default function Home() {
   return (
     <Layout>
-      <Background />
       <div className="relative min-h-screen">
         <div className="flex items-center justify-center h-screen">
           <div className="text-center">
